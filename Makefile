@@ -33,3 +33,6 @@ go/fmt:
 
 go/lint:
 	docker-compose run --rm -v $(PWD)/src:$(GO_PATH)/src/$(IMPORT_PATH) go make --no-print-directory -k lint
+
+go/test:
+	docker-compose run --rm -v $(PWD)/src:$(GO_PATH)/src/$(IMPORT_PATH) go make test

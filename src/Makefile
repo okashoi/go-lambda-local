@@ -1,6 +1,6 @@
 SRCS := $(shell find . -type f -name '*.go')
 
-.PHONY: default build fmt vet golint lint
+.PHONY: default build fmt vet golint lint test
 
 default: build
 
@@ -25,3 +25,6 @@ lint:
 	@echo
 	@echo "## golint"
 	@$(MAKE) golint
+
+test:
+	vgo test .
