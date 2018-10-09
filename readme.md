@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/okashoi/go-lambda-local.svg?style=svg)](https://circleci.com/gh/okashoi/go-lambda-local)
+
 ## Requirements
 
 * Docker 1.13.0+
