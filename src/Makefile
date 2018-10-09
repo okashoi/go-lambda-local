@@ -4,7 +4,7 @@ SRCS := $(shell find . -type f -name '*.go')
 
 default: build
 
-build: $(SRCS)
+build:
 	GOOS=linux GOARCH=amd64 vgo build -v -ldflags '-s -w' -a -tags netgo -installsuffix netgo -o $(GOPATH)/bin/main.handle ./main.go
 
 fmt:
