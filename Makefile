@@ -29,4 +29,7 @@ invoke: sam/bin/main.handle
 	docker-compose run --rm lambda sam local invoke MyApp -e events/event.json --docker-volume-basedir $(PWD)/sam
 
 go/fmt:
-	docker-compose run --rm -v $(PWD)/src:$(GO_PATH)/src/$(IMPORT_PATH) go $(MAKE) fmt
+	docker-compose run --rm -v $(PWD)/src:$(GO_PATH)/src/$(IMPORT_PATH) go make fmt FLAGS="-l -w"
+
+go/lint:
+	docker-compose run --rm -v $(PWD)/src:$(GO_PATH)/src/$(IMPORT_PATH) go make --no-print-directory -k lint
