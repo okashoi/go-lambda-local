@@ -44,6 +44,18 @@ Format source codes under the direcotry `src`.
 make go/fmt
 ```
 
+### Lint (gofmt, vet, golint)
+
+```
+make go/lint
+```
+
+### Run test
+
+```
+make go/test
+```
+
 ### Shutdown environment
 
 ```
