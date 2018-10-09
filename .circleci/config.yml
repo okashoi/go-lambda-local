@@ -13,7 +13,7 @@ jobs:
             go get -u github.com/golang/lint/golint
       - run:
           name: Lint
-          command: make -C src lint
+          command: make --no-print-directory -k -C src lint
       - run:
           name: Test
-          command: make -C src test
+          command: make --no-print-directory -C src test
