@@ -23,6 +23,7 @@ sam/bin/main.handle: $(SRCS)
 
 src/go.mod: sam/bin/main.handle
 	docker cp $(GO_CONTAINER):$(GO_PATH)/src/$(IMPORT_PATH)/go.mod src/go.mod
+	docker cp $(GO_CONTAINER):$(GO_PATH)/src/$(IMPORT_PATH)/go.sum src/go.sum
 
 invoke: sam/bin/main.handle
 	docker-compose run --rm lambda sam local invoke MyApp -e events/event.json --docker-volume-basedir $(PWD)/sam
