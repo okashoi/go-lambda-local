@@ -3,7 +3,13 @@ version: "3"
 services:
 
   go:
-    build: ./src
+    build:
+      context: ./src
+      args:
+        GOPATH: /go
+        IMPORT_PATH: github.com/okashoi/go-lambda-local
+    environment:
+      GOPATH: /go
 
   lambda:
     build: ./sam
