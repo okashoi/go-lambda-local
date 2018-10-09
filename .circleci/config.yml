@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.11
+    working_directory: /go/src/github.com/okashoi/go-lambda-local
+    steps:
+      - checkout
+      - run:
+          name: Setup
+          command: |
+            go get -u golang.org/x/vgo
+            go get -u github.com/golang/lint/golint
+      - run:
+          name: Lint
+          command: make -C src lint
+      - run:
+          name: Test
+          command: make -C src test
